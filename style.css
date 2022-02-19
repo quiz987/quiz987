@@ -1,0 +1,397 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+body{
+    margin:0;
+    background: midnightblue;
+    background-repeat:no-repeat;
+    font-family: sans-serif;
+}
+*{
+    box-sizing: border-box;
+}
+.quiz-container{
+    max-width: 700px;
+    min-height:500px;
+    background-color: white;
+    margin:40px auto;
+
+    border-radius:15px;
+    padding:30px;
+}
+.quiz-container::after,.quiz-container::before{
+    content: '';
+    clear: both;
+    display: table;
+
+}
+.question-number,
+.question,
+.options,
+.button,
+.answers-tracker{
+ float: left;
+ width: 100%;
+}
+.question-number h3{
+    color:#009688;
+    border-bottom: 2px solid magenta;
+    margin:0;
+    padding-bottom:10px;
+}
+
+.question {
+    font-size:22px;
+    color:000000;
+    padding:20px 0;
+    
+    
+    
+}
+
+.options div{
+  background-color: orange;
+  font-size:16px;
+  color:000000;
+  margin-bottom:10px;
+  border-radius:10px;
+  padding:15px;                 /*options */
+  position: relative;
+  overflow:hidden;
+  cursor: pointer;
+  width: 230px;
+  margin:2px;
+  
+}
+.options div.disabled{
+    pointer-events: none;
+}
+.options div.correct{
+    z-index: 1;
+    color: #fff;
+}
+.options div.correct::before{
+    content: '';
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-color: green;
+    z-index: -1;
+    
+    animation: animateBackground 1s ease;
+    animation-fill-mode: forwards;
+}
+@keyframes animateBackground{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+     transform: translateX(0%);    
+    }
+}
+.options div.wrong{
+    z-index: 1;
+    color: #fff;
+}
+.options div.wrong::before{
+    content: '';
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-color:red;
+    z-index: -1;
+    
+    animation: animateBackground 1s ease;
+    animation-fill-mode: forwards;
+}
+@keyframes animateBackground{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+     transform: translateX(0%);    
+    }
+}
+
+.button .btn{
+ padding:15px 50px;
+ border-radius:13px;
+ cursor: pointer;
+ background-color: black;
+ font-size:16px;
+ color:#ffffff;
+ border: none;
+ display: inline-block;
+ margin:15px 0 20px;
+ transition: 0.6;
+ transition-property: background, transform;
+}
+
+.button .btn:hover, .button .btn:focus, .button .btn:focus{
+    background: #04351E;
+    transform: scale(1.1);
+}
+.answers-tracker{
+    border-top:2px solid magenta;
+    padding-top: 15px;
+}
+.answers-tracker div{
+    height: 40px;
+    width: 40px;
+    background-color: #cccccc;
+    display: inline-block;
+    border-radius: 20%;
+    margin-right:5px;
+}
+
+.answers-tracker div.correct{
+    background-color: green;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 54%;
+
+}
+.answers-tracker div.wrong{
+    background-color: red;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+
+.quiz-over{
+    position: fixed;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-color: teal;
+    z-index: 10;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.quiz-over.show{
+    display: flex;
+}
+.quiz-over .box{
+    background-color: purple;
+    padding:30px;
+    border-radius:10px;
+    text-align: center;
+    flex-basis: 700px;
+    max-width:700px;
+    color:#ffffff;
+}
+
+.quiz-over .box h1{
+    font-size:36px;
+    margin:0 0 20px;
+}
+
+.quiz-over .box button{
+    padding:15px 50px;
+    border:none;
+    background-color: blue ;
+    border-radius:13px;
+    font-size:16px;
+    margin:15px 0 20px;
+    color:#ffffff;
+    transition: 0.6;
+    transition-property: background, transform;
+}
+
+.quiz-over button:hover, .quiz-over button:focus, .quiz-over button:focus{
+    background: rgb(0, 26, 255);
+    transform: scale(1.1);
+}
+/*extra go to live*/
+
+.vikash
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color:blue;
+    display: flex;
+    justify-content: center;
+    transition: 0.6;
+    display: inline-block;
+}
+.vikash a
+{
+   color: white;
+   text-align: center;
+   font-weight:bolder;
+   text-decoration: none;
+   text-transform: uppercase;
+   padding: 14px 28px;
+}
+.vikash a:hover
+{
+background-color: red;
+color: white;
+border-radius:5px;
+cursor: pointer;
+
+}
+img
+{
+    width: 50px;
+    
+}
+@media screen and  (max-width: 700px) 
+{
+.vikash
+{
+   background-color:blue;
+   color: black;
+
+
+}
+@media screen {
+   
+   .vikash a:hover
+   {
+       color: black;
+background-color: pink;
+   }
+}
+
+}
+            /*-----------------------------------------------*/
+.navbar
+{
+background-color: burlywood;
+display: flex;
+justify-content: center;
+}
+.navbar a
+{
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 14px 28px;
+
+}
+.navbar a:hover
+{
+    background-color: rosybrown;
+    color: seagreen;
+    border-radius: 10px;
+}
+
+
+#menu
+{
+    display: none;
+}
+#toggel
+{
+    background-color: burlywood;
+    border-bottom: 2px solid white;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+#toggel label
+{
+    background-color: white;
+    height: 45px;
+    width: 50px;
+    cursor: pointer;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+#toggel label samp
+{
+    background-color: black;
+    height: 3px;
+    width: 60%;
+    margin: 4px 0px;
+
+}
+#toggel
+{
+    display: none;
+}
+#leptop
+{
+    width: 25%;
+color: white;
+background-color: black;
+float: left;
+margin-top: 20px;
+
+
+
+}
+
+#what-the-computer
+{
+    color: rgb(241, 158, 2);
+   width: 65%; 
+   float:left;
+   border: 2px solid green;
+   margin: 20px;
+   padding:10px;
+
+   
+}
+
+
+@media screen and (max-width: 700px) 
+{
+.navbar
+
+{
+  flex-direction: column;
+  display: none;
+}
+
+#menu:checked + .navbar
+{
+    display: flex;
+}
+#toggel
+{
+    display:flex;
+}
+#leptop
+{
+    
+    width: 65%;
+    margin: 20px;
+    padding: 20px;
+    text-transform: inherit;
+    display: flex;
+    border: 2px solid red;
+    
+}
+#leptop h1
+{
+    color: rgb(0, 26, 255);
+    padding: 10px;
+}
+
+#what-the-computer
+{
+  width:90% ;
+
+    
+}
+}
